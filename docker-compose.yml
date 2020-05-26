@@ -1,0 +1,22 @@
+version: '2'
+services:
+  revp:
+    image: joxit/docker-registry-ui:static
+    volumes:
+      - "/root/nginx/html:/usr/share/nginx/html:ro"
+      - "/root/nginx/nginx.conf/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "/root/certs:/usr/share/certs:ro"
+      - "/root/nginx/auth/password:/etc/nginx/.htpasswd:ro"    
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - registry
+    links:
+      - registry
+  registry:
+    image: registry
+    expose:
+      - 5000
+    volumes:
+      - "/root/registry:/var/lib/registry:rw"
