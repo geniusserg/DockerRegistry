@@ -30,4 +30,14 @@ cp server.crt certs
 ### Open in browser
 https://<host> (admin/admin)
 
+# Useful links
 
+https://188.225.72.43/ (My Registry  (admin/admin))
+
+https://docs.docker.com/registry (Documentation)
+
+https://github.com/Joxit/docker-registry-ui (Web UI)
+
+https://www.sslforfree.com/ (free SSl)
+
+https://github.com/ind9/registry-s3 (AWS S3 Drive)
